@@ -1,0 +1,96 @@
+;
+.btn {
+  &:link {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $colorGreyDark;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2s;
+    position: relative;
+  }
+
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $colorGreyDark;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2s;
+    position: relative;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    -webkit-box-shadow: 10px 20px 20px rgba(0, 0, 0, .2);
+    -moz-box-shadow: 10px 20px 20px rgba(0, 0, 0, .2);
+    box-shadow: 10px 20px 20px rgba(0, 0, 0, .2);
+  }
+
+  &:active {
+    transform: translateY(-1px) scale(0.9);
+    -webkit-box-shadow: 0px 5px 10px rgba(0, 0, 0, .2);
+    -moz-box-shadow: 0px 5px 10px rgba(0, 0, 0, .2);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, .2);
+  }
+
+  &:after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+  }
+
+
+  &:hover::after {
+    transform: scaleX(1.4) scaleY($defaultFontSize);
+    opacity: 0;
+    content:"";
+  }
+
+  &--animated {
+    animation: moveInBottom .5s ease-out .75s;
+    animation-fill-mode: backwards;
+  }
+}
+.btn--white {
+  background-color: #fff;
+
+  &--white::after {
+    background-color: $colorWhite;
+    content: "";
+  }
+}
+
+.btn-text {
+  &:link,
+  &:visited{
+    font-size: $defaultFontSize;
+    color: $colorPrimary;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid $colorPrimary;
+    padding: 3px;
+  }
+  &:hover{
+    background-color: $colorPrimary;
+    color:$colorWhite;
+    -webkit-box-shadow: 0 1rem 2rem rgba($colorBlack,.15);
+    -moz-box-shadow: 0 1rem 2rem rgba($colorBlack,.15);
+    box-shadow: 0 1rem 2rem rgba($colorBlack,.15);
+    transform: translateY(-2px);
+  }
+  &:active{
+    -webkit-box-shadow: 0 .5rem 1rem rgba($colorBlack,.15);
+    -moz-box-shadow: 0 .5rem 1rem rgba($colorBlack,.15);
+    box-shadow: 0 .5rem 1rem rgba($colorBlack,.15);
+  }
+}
